@@ -1,11 +1,17 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Button from '@mui/material/Button';
+import WelcomePage from './component/welcome';
+import ProfileComponent from './component/profileCom';
+
 function App() {
   return (
-    <div className="App">
-      <Button className = 'btn' variant="contained"color = 'primary'> 
-      <span className = 'grtng'>Welcome</span> </Button>
-    </div>
+    <>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<WelcomePage/>} />
+          <Route path="/profile" element={<ProfileComponent/>} />
+        </Routes>
+      </BrowserRouter></>
   );
 }
 export default App;
